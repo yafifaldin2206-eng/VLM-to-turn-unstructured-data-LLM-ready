@@ -36,10 +36,10 @@ app = FastAPI(
 Transform **any visual data** into production-ready structured formats using SOTA vision models.
 
 ### Capabilities
-- 🖼️ **Images** — JPEG, PNG, WebP, GIF, TIFF
-- 📄 **PDFs** — Single and multi-page document extraction
-- 🌐 **URLs** — Web screenshots and remote image ingestion
-- 🔢 **Base64** — Direct binary ingestion
+- **Images** — JPEG, PNG, WebP, GIF, TIFF
+- **PDFs** — Single and multi-page document extraction
+- **URLs** — Web screenshots and remote image ingestion
+- **Base64** — Direct binary ingestion
 
 ### Extraction Modes
 - **Schema-driven** — Provide a JSON Schema, get back validated structured data
