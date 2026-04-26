@@ -1,6 +1,5 @@
 """
 VISIONARY Python SDK
-====================
 Typed async client for the VISIONARY multimodal extraction API.
 
 Usage:
@@ -44,7 +43,7 @@ __all__ = [
 ]
 
 
-# ─── Enums (mirrors API) ──────────────────────────────────────────────────────
+#  Enums (mirrors API) 
 
 
 class ExtractionMode(str, Enum):
@@ -85,7 +84,7 @@ class JobStatus(str, Enum):
     CANCELLED = "cancelled"
 
 
-# ─── Errors ───────────────────────────────────────────────────────────────────
+#  Errors
 
 
 class VisionaryError(Exception):
@@ -113,7 +112,7 @@ class TimeoutError(VisionaryError):
     pass
 
 
-# ─── Result Types ─────────────────────────────────────────────────────────────
+#  Result Types
 
 
 class FieldConfidence:
@@ -268,7 +267,7 @@ class BatchJob:
         )
 
 
-# ─── Client ───────────────────────────────────────────────────────────────────
+#  Client 
 
 
 class VisionaryClient:
@@ -315,7 +314,7 @@ class VisionaryClient:
         if self._client:
             await self._client.aclose()
 
-    # ─── Core request helper ─────────────────────────────────────────────────
+    # Core request helper
 
     async def _request(self, method: str, path: str, **kwargs) -> Dict[str, Any]:
         if not self._client:
@@ -365,7 +364,7 @@ class VisionaryClient:
     async def _post(self, path: str, body: Dict[str, Any]) -> Dict[str, Any]:
         return await self._request("POST", path, json=body)
 
-    # ─── Input builders ──────────────────────────────────────────────────────
+    # Input builders 
 
     @staticmethod
     def _url_input(url: str, label: Optional[str] = None) -> Dict[str, Any]:
@@ -449,7 +448,7 @@ class VisionaryClient:
             "fallback_providers": [p.value for p in fallback_providers],
         }
 
-    # ─── High-level extraction methods ───────────────────────────────────────
+    # High-level extraction methods
 
     async def extract_url(
         self,
@@ -598,7 +597,7 @@ class VisionaryClient:
         raw = await self._post("/extract", body)
         return ExtractionResult(raw)
 
-    # ─── Batch methods ───────────────────────────────────────────────────────
+    #  Batch methods 
 
     async def batch_extract(
         self,
@@ -652,7 +651,7 @@ class VisionaryClient:
         raw = await self._post("/batch", body)
         return BatchJob(raw, self)
 
-    # ─── Job management ──────────────────────────────────────────────────────
+    # Job management 
 
     async def get_job(self, job_id: str) -> BatchJob:
         raw = await self._get(f"/jobs/{job_id}")
@@ -667,7 +666,7 @@ class VisionaryClient:
         result = await self._request("DELETE", f"/jobs/{job_id}")
         return result.get("deleted", False)
 
-    # ─── Templates & Providers ───────────────────────────────────────────────
+    #  Templates & Providers 
 
     async def list_templates(self) -> List[Dict[str, Any]]:
         return await self._get("/templates")
