@@ -1,5 +1,5 @@
-# VLM-to-turn-unstructured-data-LLM-ready
-Enterprises love talking about “AI integration,” but most of their data is still trapped in PDFs, PPTs, and Word files. Feeding raw documents directly into LLMs quickly explodes token costs and breaks scalability. Zeno solves this with an open-source VLM pipeline that converts unstructured documents into clean, LLM-ready structured formats.
+# MBG : Multimodal Bridge Generator for Structured Document Extraction
+Enterprises talk about AI integration, but most of their data is still locked in unstructured formats like PDFs, images, and slides. Feeding raw documents directly into LLMs leads to high token costs, inconsistent outputs, and poor scalability. MBG (Multimodal Bridge Generator) is an open-source VLM-powered pipeline that bridges unstructured data into structured, schema-aware formats — making them easier, cheaper, and more reliable to use with LLM systems. It includes multi-provider routing (Claude, GPT-4V, Gemini), batch processing, and confidence scoring for production-oriented workflows.
 
 # VISIONARY API
 
