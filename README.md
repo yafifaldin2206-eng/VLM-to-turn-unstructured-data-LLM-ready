@@ -1,7 +1,7 @@
 
 
 # VISIONARY API
-Enterprises talk about AI integration, but most of their data is still locked in unstructured formats like PDFs, images, and slides. Feeding raw documents directly into LLMs leads to high token costs, inconsistent outputs, and poor scalability. MBG (Multimodal Bridge Generator) is an open-source VLM-powered pipeline that bridges unstructured data into structured, schema-aware formats, making them easier, cheaper, and more reliable to use with LLM systems. It includes multi-provider routing (Claude, GPT-4V, Gemini), batch processing, and confidence scoring for production-oriented workflows.
+Enterprises talk about AI integration, but most of their data is still locked in unstructured formats like PDFs, images, and slides. Feeding raw documents directly into LLMs leads to high token costs, inconsistent outputs, and poor scalability. Visionary is an open-source VLM-powered pipeline that bridges unstructured data into structured, schema-aware formats, making them easier, cheaper, and more reliable to use with LLM systems. It includes multi-provider routing (Claude, GPT-4V, Gemini), batch processing, and confidence scoring for production-oriented workflows.
 **Multimodal unstructured data → structured formats, at API scale.**
 
 Transform images, PDFs, and web pages into production-ready structured JSON using SOTA vision models (Claude, GPT-4V, Gemini) — with automatic provider routing, batch processing, and schema validation.
